@@ -8,23 +8,29 @@ from .models import Event
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ["id", "username", "email", "password"]
+        fields = ("id", "username", "email", "password")
         extra_kwargs = {"password": {"write_only": True}}
 
     def create(self, validated_data):
+        # Create the user and hash their password
         user = User.objects.create(
             username=validated_data["username"],
             email=validated_data.get("email", ""),
             password=make_password(validated_data["password"]),
         )
-        Token.objects.create(user=user)  # Create a token for the new user
+        user.save()
+        Token.objects.create(user=user)  # Generate a token for the new user
         return user
 
 
 class EventSerializer(serializers.ModelSerializer):
+    user = serializers.ReadOnlyField(
+        source="user.username"
+    )  # Display the username of the user who created the event
+
     class Meta:
         model = Event
-        fields = [
+        fields = (
             "id",
             "user",
             "event_name",
@@ -33,10 +39,9 @@ class EventSerializer(serializers.ModelSerializer):
             "location",
             "image",
             "is_liked",
-        ]
-        read_only_fields = ("user",)
+        )
 
     def create(self, validated_data):
-        # Add the user from the request when creating an event
-        validated_data["user"] = self.context["request"].user
-        return super().create(validated_data)
+        # Automatically set the user to the request user when creating an event
+        event = Event.objects.create(**validated_data)
+        return event
