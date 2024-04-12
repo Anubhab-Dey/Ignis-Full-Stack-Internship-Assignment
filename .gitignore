@@ -1,0 +1,37 @@
+# General
+*.log
+.DS_Store
+
+# Python/Django-specific
+*.py[cod]
+__pycache__/
+*.sqlite3
+.db.sqlite3
+.venv/
+media/
+
+# Frontend-specific
+# Node modules
+ignis-full-stack-internship-assignment-frontend/node_modules/
+ignis-full-stack-internship-assignment-frontend/.pnp
+ignis-full-stack-internship-assignment-frontend/.pnp.js
+
+# Testing artifacts
+ignis-full-stack-internship-assignment-frontend/coverage/
+
+# Production build folder
+ignis-full-stack-internship-assignment-frontend/build/
+
+# Environment files
+ignis-full-stack-internship-assignment-frontend/.env.local
+ignis-full-stack-internship-assignment-frontend/.env.development.local
+ignis-full-stack-internship-assignment-frontend/.env.test.local
+ignis-full-stack-internship-assignment-frontend/.env.production.local
+
+# Logs
+ignis-full-stack-internship-assignment-frontend/npm-debug.log*
+ignis-full-stack-internship-assignment-frontend/yarn-debug.log*
+ignis-full-stack-internship-assignment-frontend/yarn-error.log*
+
+# VSCode
+.vscode/
