@@ -141,7 +141,7 @@ REST_FRAMEWORK = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "ignis_full_stack_internship_assignment_backend_database",
+        "NAME": "ignis_full_stack_internship_assignment_database",
         "USER": "anubhabdey2017",
         "PASSWORD": "Anubhabdey@2017",
         "HOST": "localhost",
