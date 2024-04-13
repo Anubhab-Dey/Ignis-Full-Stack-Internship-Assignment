@@ -82,8 +82,12 @@ WSGI_APPLICATION = (
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "ignis_full_stack_internship_assignment_database",
+        "USER": "anubhabdey2017",
+        "PASSWORD": "Anubhabdey@2017",
+        "HOST": "localhost",
+        "PORT": "3306",
     }
 }
 
@@ -136,15 +140,4 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
     ],
-}
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "ignis_full_stack_internship_assignment_database",
-        "USER": "anubhabdey2017",
-        "PASSWORD": "Anubhabdey@2017",
-        "HOST": "localhost",
-        "PORT": "3306",
-    }
 }
