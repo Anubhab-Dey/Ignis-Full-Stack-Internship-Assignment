@@ -137,3 +137,14 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ],
 }
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "ignis_full_stack_internship_assignment_backend_database",
+        "USER": "anubhabdey2017",
+        "PASSWORD": "Anubhabdey@2017",
+        "HOST": "localhost",  # Or an IP Address that your DB is hosted on
+        "PORT": "3306",  # Default MySQL port
+    }
+}
