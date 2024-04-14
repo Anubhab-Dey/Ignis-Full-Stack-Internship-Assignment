@@ -9,6 +9,6 @@ from .views import (
 urlpatterns = [
     path("register/", CreateUserView.as_view(), name="register"),
     path("login/", LoginView.as_view(), name="login"),
-    path("events/", EventListCreateView.as_view(), name="events-list"),
-    path("events/<int:pk>/", EventDetailView.as_view(), name="event-detail"),
+    path("", EventListCreateView.as_view(), name="events-list"),
+    path("<int:pk>/", EventDetailView.as_view(), name="event-detail"),
 ]
