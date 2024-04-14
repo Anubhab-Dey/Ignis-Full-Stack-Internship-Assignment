@@ -35,8 +35,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "proxy": "http://localhost:8000"
+    ]
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.2",
@@ -48,5 +47,6 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^15.0.0"
-  }
+  },
+  "proxy": "http://localhost:8000"
 }
