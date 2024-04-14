@@ -19,11 +19,11 @@ repos:
         args: ['--line-length', '79']
 
   - repo: https://github.com/pre-commit/mirrors-eslint
-    rev: 'v9.0.0'  # Specify the latest ESLint mirror release or use 'master'
+    rev: 'v9.0.0'
     hooks:
       - id: eslint
         additional_dependencies:
-          - eslint@^8.57.0  # Specify the version of ESLint you have installed
+          - eslint@^8.57.0
         args:
-          - '--max-warnings=0'  # Fails if there are warnings
-        files: \.(js|jsx|ts|tsx)$  # Adjust this regex to target specific files
+          - '--max-warnings=0'
+        files: \.(js|jsx|ts|tsx)$
