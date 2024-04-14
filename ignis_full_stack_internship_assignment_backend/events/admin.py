@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from .models import Event
 
 
-# Optional: Customize the User admin to add more fields in the admin interface
 class CustomUserAdmin(UserAdmin):
     list_display = (
         "username",
@@ -17,12 +16,10 @@ class CustomUserAdmin(UserAdmin):
     list_filter = ("is_staff", "is_superuser", "is_active")
 
 
-# Register the customized User Admin
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
 
 
-# Register your Event model
 class EventAdmin(admin.ModelAdmin):
     list_display = (
         "event_name",
